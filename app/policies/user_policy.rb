@@ -12,6 +12,6 @@ class UserPolicy
     # if so it can go to index and see index 
     # else it is access denied
     def index?  
-        @current_user.admin?    
+        @current_user.student?    
     end 
 end 
