@@ -66,9 +66,44 @@ input::-webkit-input-placeholder {
  	margin-top: 30px;
  	margin: 0 auto;
  	max-width: 500px;
-    padding: 10px 30px;
+    padding: 10px 15px;
 
 }
+
+.form-control-inline-first-name {
+    min-width: 0;
+    width: 200px;
+    display: inline;
+}
+
+.form-control-inline-last-name{
+	width: 201px;
+	display: inline;
+	margin-left: -23px;
+}
+
+@media (min-width:350px) and (max-width:767px) { 
+
+	.form-control-inline-first-name {
+    	display: inline-block;
+    	width: 100%;
+	}
+
+	.form-control-inline-last-name{
+		margin-left: 0px;
+		display: inline-block;
+		width: 100%;
+	}
+	
+	.form-control-inline-middle-initial{
+		width: 100%;
+	}
+}
+
+.control-date-field{
+	width: 30%;
+}
+
 
 .login-button{
 	margin-top: 5px;

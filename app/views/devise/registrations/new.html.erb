@@ -41,12 +41,51 @@
 				<div class="main-login main-center">
 					<form class="form-horizontal" method="post" action="#">
 
+						
+					<label for="name" class="cols-md-12 control-label">Name</label>
+
+
+					<div class="form-group">
+						<div class="row">
+								<form class="form-inline">
+									<div class="col-sm-5">
+										<div class="input-group form-control-inline-first-name">
+											<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									    	<%= f.input :first_name, required: true, autofocus: true, error: false, label: false, placeholder: "First Name" %>
+										</div>
+									</div>
+								
+									<div class="col-sm-2">
+										<div class="input-group form-control-inline-middle-initial">
+									    	<%= f.input :middle_initial, required: true, autofocus: true, error: false, label: false, placeholder: "M.I." %>
+										</div>
+									</div>
+								
+									<div class="col-sm-5">
+										<div class="input-group form-control-inline-last-name">
+									    	<%= f.input :last_name, required: true, autofocus: true, error: false, label: false, placeholder: "Last Name" %>
+										</div>
+									</div>
+								</form>
+						</div>
+					</div>
+
 						<div class="form-group">
 							<label for="email" class="cols-sm-2 control-label">Email</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
 									    <%= f.input :email, required: true, autofocus: true, error: false, label: false, placeholder: "Enter your Email" %>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label for="birthdate" class="cols-sm-2 control-label">Birthdate</label>
+							<div class="cols-sm-10">
+								<div class="input-group control-date-field">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
+										<%= f.date_field :birthdate, required: true, autofocus: true, error: false, label: false %>
 								</div>
 							</div>
 						</div>
@@ -81,7 +120,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		
 		
 		
