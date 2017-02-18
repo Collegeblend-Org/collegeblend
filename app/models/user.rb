@@ -11,4 +11,6 @@ class User < ActiveRecord::Base
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+         validates :first_name, :middle_initial, :last_name, :birthdate, presence: true
 end
