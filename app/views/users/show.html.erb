@@ -1,3 +1,9 @@
 <h1>This is the show page</h1>
-
+<h2>Welcome <%= @user.first_name %> <%= @user.middle_initial %> <%= @user.last_name %>!</h2>
+<hr /> 
+<h3>User Profile Information:</h3>
 <p>Email: <%= @user.email if @user.email %></p>
+<p>First Name: <%= @user.first_name if @user.first_name %></p>
+<p>Middle Initial: <%= @user.middle_initial if @user.middle_initial %></p>
+<p>Last Name: <%=@user.last_name if @user.last_name %></p>
+<p>Birth Date: <%=@user.birthdate if @user.birthdate %></p>
