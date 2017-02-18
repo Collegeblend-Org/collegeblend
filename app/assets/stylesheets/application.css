@@ -31,6 +31,16 @@ h1.title {
 	font-weight: 400; 
 }
 
+table{
+	margin-left: -25px;
+	table-layout: fixed;
+	width: 50px;
+}
+
+.shift-row-left{
+	text-align: left;
+}
+
 hr{
 	width: 10%;
 	color: #fff;

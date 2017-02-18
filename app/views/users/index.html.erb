@@ -1,12 +1,31 @@
-<br>
 <div class="container">
-    <table class="table-minimal">
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
+  <table bordercolor="grey" border="2" class="table">
+
+    <thead>
+      <tr>
+        <th>User Email</th>
+        <th>Current Role</th>
+        <th>Change Role</th>
+        <th>Delete User</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @users.each do |user| %>
+        <% if user.admin? %>
+          <tr class="success shift-row-left">
+            <%= render user %>
+          </tr>
+        <% elsif user.counselor? then %>
+          <tr class="warning shift-row-left">
+            <%= render user %>
+          </tr>
+        <% elsif user.student? then %>
+          <tr class="danger shift-row-left">
             <%= render user %>
           </tr>
         <% end %>
-      </tbody>
-    </table>
+      <% end %>
+    </tbody>
+  </table>
 </div>
