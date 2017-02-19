@@ -17,6 +17,8 @@ gem 'devise'
 
 gem 'pundit'
 
+gem 'high_voltage', '~> 3.0.0'
+
 gem 'simple_form'
 
 # Use jquery as the JavaScript library
