@@ -69,10 +69,11 @@
     <% flash.each do |message_type, message| %>
       <div id = "flash" class="flash-<%= message_type %>"><%= message %></div>
     <% end %>
-    
-
 
 <%= yield %>
 
 </body>
 </html>
+
+
+
