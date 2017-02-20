@@ -6,13 +6,14 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <%= stylesheet_link_tag '/bootstrap/css/bootstrap.min.css' %> 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <%= stylesheet_link_tag '/dist/css/AdminLTE.min.css' %> 
+  <%= stylesheet_link_tag '/dist/css/skins/skin-blue.min.css' %> 
 </head>
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -39,7 +40,7 @@
         <li><%= link_to 'Sign Up', new_user_registration_path, :class => "btn" %></li>
         <li><%= link_to 'Log In', new_user_session_path, :class => "btn" %></li>
         <% end %>
-        <li><%= link_to 'Contact', page_path('contact') %></li>
+        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -71,6 +72,15 @@
     <% end %>
 
 <%= yield %>
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 2.2.3 -->
+<%= javascript_include_tag '/plugins/jQuery/jquery-2.2.3.min.js' %>
+<!-- Bootstrap 3.3.6 -->
+<%= javascript_include_tag '/bootstrap/js/bootstrap.min.js' %>
+<!-- AdminLTE App -->
+<%= javascript_include_tag '/dist/js/app.min.js' %>
 
 </body>
 </html>
