@@ -2,6 +2,18 @@
   <%= link_to user.email, user %>
 </td>
 <td>
+  <%= user.created_at %>
+</td>
+<td>
+  <% if user.admin? %>
+    <span class="label label-primary"><%= user.role %></span>
+  <% elsif user.counselor? %>
+    <span class="label label-warning"><%= user.role %></span>
+  <% else %>
+    <span class="label label-danger"><%= user.role %></span>
+  <% end %>
+</td>
+<td>
   <%= form_for(user) do |f| %>
     <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
     <td>

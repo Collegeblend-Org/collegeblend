@@ -263,3 +263,12 @@ input::-webkit-input-placeholder {
     display: block;
   }
 }
+
+.user-struct{
+  padding-right: 30px;
+  text-align: center;
+}
+
+.test-style{
+  margin-left: -15px;
+}
