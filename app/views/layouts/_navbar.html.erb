@@ -3,14 +3,14 @@
 
     <!-- Main Header -->
     <header class="main-header">
-  
+      
       <!-- Logo -->
-      <a href="index2.html" class="logo">
+      <%= link_to page_path('home'), :class => "logo" do %>
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>C</b>B</span>
         <!-- logo for regular state and mobile devices -->
         <span class="logo-lg"><b>College</b>Blend</span>
-      </a>
+      <% end %>
   
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
