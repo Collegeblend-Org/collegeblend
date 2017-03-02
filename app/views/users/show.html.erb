@@ -1,9 +1,29 @@
-<h1>This is the show page</h1>
-<h2>Welcome <%= @user.first_name %> <%= @user.middle_initial %> <%= @user.last_name %>!</h2>
-<hr /> 
-<h3>User Profile Information:</h3>
-<p>Email: <%= @user.email if @user.email %></p>
-<p>First Name: <%= @user.first_name if @user.first_name %></p>
-<p>Middle Initial: <%= @user.middle_initial if @user.middle_initial %></p>
-<p>Last Name: <%=@user.last_name if @user.last_name %></p>
-<p>Birth Date: <%=@user.birthdate if @user.birthdate %></p>
+<body>
+    <div align = "center">
+        <h1><%= @user.first_name %> <%= @user.middle_initial %> <%= @user.last_name %></h1>
+        <hr /> 
+        <h2>User Profile Information:</h2>
+        <p>Email: <%= @user.email if @user.email %></p>
+        <p>First Name: <%= @user.first_name if @user.first_name %></p>
+        <p>Middle Initial: <%= @user.middle_initial if @user.middle_initial %></p>
+        <p>Last Name: <%=@user.last_name if @user.last_name %></p>
+        <p>Birth Date: <%=@user.birthdate if @user.birthdate %></p>
+        <div>
+            <%= link_to page_path('build_profile') do %>
+                <button type="button" class="btn btn-primary">Build My Profile</button>
+            <% end %>
+        </div>
+    </div>
+</body>
+
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>

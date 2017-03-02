@@ -137,7 +137,12 @@ desired effect
       <% elsif current_page?(users_path) %>
         <%= render template: 'users/index' %>
         
+      <% elsif current_page?('/pages/build_profile') %>
+        <%= render template: '/pages/build_profile' %>
+        
       <% end %>
+      
+      
       <!-- Your Page Content Here -->
 
     </section>
