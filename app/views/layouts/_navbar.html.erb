@@ -19,17 +19,10 @@
         <!-- Navbar Right Menu -->
         <div class="navbar-custom-menu">
           <ul class="nav navbar-nav">
-             <% if user_signed_in? %>
-                <li><%= link_to 'Profile', current_user, :class => "btn" %></li>
-                <li><%= link_to 'User Index', users_path, :class => "btn" %></li>
-                <li><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :class => "btn" %></li>
-              <% else %>
                 <li><%= link_to 'Home', page_path('home'), :class => "btn" %></li>
-                <li><%= link_to 'User Index', users_path, :class => "btn" %></li>
                 <li><%= link_to 'Sign Up', new_user_registration_path, :class => "btn" %></li>
                 <li><%= link_to 'Log In', new_user_session_path, :class => "btn" %></li>
                 <li><%= link_to 'Contact', page_path('contact'), :class => "btn" %></li>
-              <% end %>
           </ul>
         </div>
       </nav>
