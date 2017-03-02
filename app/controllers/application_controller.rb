@@ -14,6 +14,22 @@ class ApplicationController < ActionController::Base
       redirect_to (request.referrer || root_path)
     end 
     
+    def after_sign_in_path_for(resource_or_scope)
+      if current_user.admin?
+        users_path
+      else
+        current_user
+      end
+    end
+    
+    def after_sign_out_path_for(resource_or_scope)
+      '/pages/home'
+    end
+    
+    def after_sign_up_path_for(resource)
+      after_sign_in_path_for(resource)
+    end
+    
   protected
   
   def configure_permitted_parameters
