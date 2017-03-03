@@ -9,11 +9,10 @@
         <p>Last Name: <%= @user.last_name if @user.last_name %></p>
         <p>Birth Date: <%= @user.birthdate if @user.birthdate %></p>
         <p>Points Earned: <%= @user.points_total %></p>
-        <div>
-            <%= link_to page_path('build_profile') do %>
+        <p> <%= link_to page_path('build_profile') do %>
                 <button type="button" class="btn btn-primary">Build My Profile</button>
             <% end %>
-        </div>
+        </p>
     </div>
 </body>
 
