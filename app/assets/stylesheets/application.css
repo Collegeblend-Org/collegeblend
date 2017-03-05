@@ -300,7 +300,7 @@ input::-webkit-input-placeholder {
     color: #2D73A7;
 }
 
-.progress money {
-  background-color: black;
+.progress{
+  background: #DE73A3 !important;
 }
 
