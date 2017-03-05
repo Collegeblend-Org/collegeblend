@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     def show 
         @user = User.find(params[:id]) 
         authorize @user
+        @new_user = check_if_new_user
     end 
     
     def destroy 
@@ -34,5 +35,14 @@ class UsersController < ApplicationController
         
         def secure_params
             params.require(:user).permit(:role)
+        end
+        
+        def check_if_new_user
+            if @user.points_total == 0
+                @user.add_points(5)
+                @new_user = true
+            else 
+                @new_user = false
+            end
         end
 end

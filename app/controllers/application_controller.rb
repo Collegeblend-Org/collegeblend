@@ -16,10 +16,8 @@ class ApplicationController < ActionController::Base
     
     def after_sign_in_path_for(resource_or_scope)
       if current_user.admin?
-        @user.add_points(20, "Awarded for logging back!")
         users_path
       else
-        @user.add_points(20, "Awarded for logging back!")
         current_user
       end
     end

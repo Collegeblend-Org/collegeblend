@@ -1,8 +1,18 @@
 <body>
     <div align = "center">
+        <% if @new_user == true %>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                Thank you for signing up for collegeblend!
+            </div>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                You have been awarded 5 points!
+            </div>
+            <%= javascript_include_tag 'points_alert' %>
+        <% end %>
         <h1><%= @user.first_name %> <%= @user.middle_initial %> <%= @user.last_name %></h1>
         <hr /> 
-        <h2>User Profile Information:</h2>
         <p>Email: <%= @user.email if @user.email %></p>
         <p>First Name: <%= @user.first_name if @user.first_name %></p>
         <p>Middle Initial: <%= @user.middle_initial if @user.middle_initial %></p>
