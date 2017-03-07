@@ -11,17 +11,25 @@ class User < ActiveRecord::Base
         self.role ||= :student
      end 
      
-     def points_to_money
-         money = self.points_total * 0.2
-         return '%.2f' % money
-     end
+    def points_to_money
+        money = self.points_total * 0.2
+        if money > 1000
+            return 1000
+        else
+            return '%.2f' % money
+        end
+    end
      
-     def money_earned_out_of_money_possible
-         money = self.points_total * 0.2
-         money_possible = 1000
-         perc_earned_to_possible = (money / money_possible) * 100
-         return '%.2f' % perc_earned_to_possible
-     end
+    def money_earned_out_of_money_possible
+        money = self.points_total * 0.2
+        money_possible = 1000
+        if money > money_possible
+            return 100
+        else
+            perc_earned_to_possible = (money / money_possible) * 100
+            return '%.2f' % perc_earned_to_possible
+        end
+    end
   
     devise :database_authenticatable, :registerable,
         :recoverable, :rememberable, :trackable, :validatable
