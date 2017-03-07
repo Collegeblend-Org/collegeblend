@@ -139,8 +139,14 @@ desired effect
       <% elsif current_page?(users_path) %>
         <%= render template: 'users/index' %>
         
+      <% elsif current_page?(user_path(@user)) %>
+        <%= render template: 'users/show' %>
+        
       <% elsif current_page?('/pages/build_profile') %>
         <%= render template: '/pages/build_profile' %>
+      
+      <% else %>
+        <%= render template: '/pages/home' %>
         
       <% end %>
       
