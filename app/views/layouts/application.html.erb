@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CollegeBlend</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <!-- Latest compiled and minified CSS -->
-   <%= stylesheet_link_tag '/bootstrap/css/bootstrap.min.css' %> 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <%= stylesheet_link_tag '/dist/css/AdminLTE.min.css' %> 
-  <%= stylesheet_link_tag '/dist/css/skins/skin-blue.min.css' %> 
-</head>
+  <body>
+    <head>
+      <title>CollegeBlend</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+      <!-- Latest compiled and minified CSS -->
+      <%= stylesheet_link_tag '/bootstrap/css/bootstrap.min.css' %> 
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Theme style -->
+      <%= stylesheet_link_tag '/dist/css/AdminLTE.min.css' %> 
+      <%= stylesheet_link_tag '/dist/css/skins/skin-blue.min.css' %> 
+    </head>
 
-<% if user_signed_in? %>
-  <%= render 'layouts/sidebar' %>
-<% else %>
-  <%= render 'layouts/navbar' %>
-<% end %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/sidebar' %>
+    <% else %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
 
-<div class = "container">
-  <% flash.each do |message_type, message| %>
-    <div id = "flash" class="flash-<%= message_type %>"><%= message %></div>
-  <% end %>
+    <div class = "container">
+      <% flash.each do |message_type, message| %>
+        <div id = "flash" class="flash-<%= message_type %>"><%= message %></div>
+      <% end %>
 
-<%= yield %>
+    <%= yield %>
 
 
-<!-- REQUIRED JS SCRIPTS -->
+    <!-- REQUIRED JS SCRIPTS -->
 
-<!-- jQuery 2.2.3 -->
-<%= javascript_include_tag '/plugins/jQuery/jquery-2.2.3.min.js' %>
-<!-- Bootstrap 3.3.6 -->
-<%= javascript_include_tag '/bootstrap/js/bootstrap.min.js' %>
-<!-- AdminLTE App -->
-<%= javascript_include_tag '/dist/js/app.min.js' %>
+    <!-- jQuery 2.2.3 -->
+    <%= javascript_include_tag '/plugins/jQuery/jquery-2.2.3.min.js' %>
+    <!-- Bootstrap 3.3.6 -->
+    <%= javascript_include_tag '/bootstrap/js/bootstrap.min.js' %>
+    <!-- AdminLTE App -->
+    <%= javascript_include_tag '/dist/js/app.min.js' %>
 
-</body>
+  </body>
 </html>
 
 

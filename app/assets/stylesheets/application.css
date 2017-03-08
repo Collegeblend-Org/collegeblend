@@ -269,10 +269,6 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
-.test-style{
-  margin-left: -15px;
-}
-
 /* The alert message box */
 .alert {
     padding: 20px;
@@ -305,5 +301,23 @@ input::-webkit-input-placeholder {
   border: 1px solid rgba(44, 38, 148, 1) !important;
   border-radius: 8px !important;
   height: 24px !important;
+}
+
+@media print{
+  header, button, ul, img, li, form, a, span, nav, href, input, action, footer, aside, i{
+    display: none;
+  }
+  
+  h1{
+    text-align: center;
+  }
+  
+  p{
+    text-align: left;
+  }
+  
+  .block-for-print{
+    display: none;
+  }
 }
 

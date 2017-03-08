@@ -73,7 +73,7 @@ desired effect
           <img src="/assets/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><%= current_user.first_name + " " + current_user.last_name %></p>
+          <p class="block-for-print"><%= current_user.first_name + " " + current_user.last_name %></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -118,7 +118,7 @@ desired effect
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
+      <h1 class="block-for-print">
         <% if current_page?('/pages/build_profile') %>
           Build My Profile
         <% elsif current_page?(users_path) %>
@@ -139,11 +139,11 @@ desired effect
       <% elsif current_page?(users_path) %>
         <%= render template: 'users/index' %>
         
-      <% elsif current_page?(user_path(@user)) %>
-        <%= render template: 'users/show' %>
-        
       <% elsif current_page?('/pages/build_profile') %>
         <%= render template: '/pages/build_profile' %>
+        
+      <% elsif current_page?(user_path(@user)) %> 
+        <%= render template: 'users/show' %>
       
       <% else %>
         <%= render template: '/pages/home' %>

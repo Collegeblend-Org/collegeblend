@@ -24,8 +24,14 @@
                 <button type="button" class="btn btn-primary">Build My Profile</button>
             <% end %>
         </p>
+        <p> <% if current_user.admin? %>
+                <%= link_to '#', :onclick => 'window.print();return false;' do %>
+                    <button type="button" class="btn btn-primary">Print Report</button>
+                <% end %>
+            <% end %>
+        </p>
         <p>
-            <div class="progress">
+            <div class="progress block-for-print">
                 <div class="progress-bar progress-money" role="progressbar" aria-valuenow="70"
                     aria-valuemin="0" aria-valuemax="100" style="width:<%= @user.money_earned_out_of_money_possible%>%">
                     <%= @user.money_earned_out_of_money_possible %> % (<%= '%.0f' % @user.points_to_money %> / 1000)
