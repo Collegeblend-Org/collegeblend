@@ -18,8 +18,10 @@
         <p><b>Middle Initial:</b> <%= @user.middle_initial if @user.middle_initial %></p>
         <p><b>Last Name:</b> <%= @user.last_name if @user.last_name %></p>
         <p><b>Birth Date:</b> <%= @user.birthdate if @user.birthdate %></p>
-        <p><b>Points Earned:</b> <%= @user.points_total %></p>
-        <p><b>$:</b> <%= @user.points_to_money %></p>
+        <br/>
+        <p><b>Quizzes Completed:</b> 0</p>
+        <p><b>Points:</b> <%= @user.points_total %></p>
+        <p><b>Scholarship:</b> $<%= @user.points_to_money %></p>
         <p> <%= link_to page_path('build_profile') do %>
                 <button type="button" class="btn btn-primary">Build My Profile</button>
             <% end %>
