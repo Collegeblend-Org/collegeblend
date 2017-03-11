@@ -15,4 +15,6 @@ class User < ActiveRecord::Base
         :recoverable, :rememberable, :trackable, :validatable
          
     validates :first_name, :middle_initial, :last_name, :birthdate, presence: true
+    
+    has_many :articles
 end

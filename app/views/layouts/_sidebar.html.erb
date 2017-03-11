@@ -146,6 +146,12 @@ desired effect
       <% elsif current_page?('/pages/build_profile') %>
         <%= render template: '/pages/build_profile' %>
         
+       <% elsif current_page?(articles_path) %>
+        <%= render template: '/articles/index' %>
+        
+      <% elsif current_page?('/articles/new') %>
+        <%= render template: '/articles/new' %>
+        
       <% end %>
       
       
