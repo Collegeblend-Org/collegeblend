@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+  
+  resources :articles
   devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
   root "pages#show", page: "starter"
    
   #create users route 
