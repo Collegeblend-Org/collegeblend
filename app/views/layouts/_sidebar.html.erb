@@ -147,6 +147,9 @@ desired effect
       <% elsif current_page?('/articles/new') %>
         <%= render template: '/articles/new' %>
         
+      <% elsif current_page?(@article) %>
+        <%= render template: '/articles/show' %>
+        
       <%# <% elsif current_page?(user_path(@user)) %>
         <%#<%= render template: 'users/show' %>
       

@@ -27,7 +27,7 @@
     </div>
     <div class="mailbox-read-message">
       <p>
-        <%=h truncate(article.body, :length => 1500) %>
+        <%=raw article.body.truncate(1500) %>
       </p>
     </div>
     <div align="center">
