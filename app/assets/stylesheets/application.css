@@ -321,3 +321,6 @@ input::-webkit-input-placeholder {
   }
 }
 
+.style-btn{
+  width: 80px;
+}
