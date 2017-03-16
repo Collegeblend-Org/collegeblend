@@ -152,6 +152,9 @@ desired effect
       <% elsif current_page?('/articles/new') %>
         <%= render template: '/articles/new' %>
         
+        <% elsif current_page?('/articles/show') %>
+        <%= render template: '/articles/show/:id' %>
+        
       <% end %>
       
       
