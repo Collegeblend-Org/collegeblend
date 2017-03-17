@@ -147,6 +147,7 @@ desired effect
       <% elsif current_page?('/articles/new') %>
         <%= render template: '/articles/new' %>
         
+<<<<<<< HEAD
       <% elsif current_page?(@article) %>
         <%= render template: '/articles/show' %>
         
@@ -155,6 +156,10 @@ desired effect
       
       <% else %>
         <%= render template: '/pages/home' %>
+=======
+        <% elsif current_page?('/articles/show') %>
+        <%= render template: '/articles/show/:id' %>
+>>>>>>> origin/adamDev
         
       <% end %>
       
