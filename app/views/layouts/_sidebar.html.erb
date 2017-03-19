@@ -94,10 +94,11 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">Navigation</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+        <li class="active"><a href="#"><i class="fa fa-home"></i> <span>Home</span></a></li>
+        <li><a href="#"><i class="fa fa-users"></i> <span>Users</span></a></li>
+        <li><a href="#"><i class="fa fa-pencil-square"></i> <span>Articles</span></a></li>
+        <!-- <li class="treeview">
+          <a href="#"><i class="fa fa-pencil-square"></i> <span>Articles</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -106,7 +107,7 @@ desired effect
             <li><a href="#">Link in level 2</a></li>
             <li><a href="#">Link in level 2</a></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
       <!-- /.sidebar-menu -->
     </section>
@@ -147,7 +148,6 @@ desired effect
       <% elsif current_page?('/articles/new') %>
         <%= render template: '/articles/new' %>
         
-<<<<<<< HEAD
       <% elsif current_page?(@article) %>
         <%= render template: '/articles/show' %>
         
@@ -156,10 +156,6 @@ desired effect
       
       <% else %>
         <%= render template: '/pages/home' %>
-=======
-        <% elsif current_page?('/articles/show') %>
-        <%= render template: '/articles/show/:id' %>
->>>>>>> origin/adamDev
         
       <% end %>
       
