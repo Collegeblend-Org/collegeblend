@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title if @article %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= raw(@article.body) if @article %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) if @article %> |
-<%= link_to 'Back', articles_path %>
+<div class="box box-primary">
+  <div class="box-header with-border">
+    <h3 class="box-title"><%= @article.title if @article %></h3>
+  </div>
+  <div class="box-body">
+    <%= raw(@article.body) if @article %>
+  </div>
+  <div class="padEdit">
+    <% if @article %>
+      <% if current_user.admin? %>
+        <%= link_to edit_article_path(@article) do %>
+          <button type="button" class="btn btn-primary btn-sm">Edit</button>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= link_to articles_path do %>
+      <button type="button" class="btn btn-primary btn-sm">Back</button>
+    <% end %>
+  </div>
+  </br>
+</div>

@@ -330,3 +330,7 @@ input::-webkit-input-placeholder {
 	color: white !important;
 }
 
+.padEdit{
+  margin-left: 20px;
+}
+
