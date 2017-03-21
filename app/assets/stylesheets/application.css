@@ -77,46 +77,66 @@ input::-webkit-input-placeholder {
  	margin: 0 auto;
  	max-width: 500px;
     padding: 10px 15px;
-
 }
 
-.form-control-inline-first-name {
-    min-width: 0;
-    width: 200px;
-    display: inline;
+.first-name{
+  width: 170px !important;
 }
 
-.form-control-inline-last-name{
-	width: 201px;
-	display: inline;
-	margin-left: -23px;
+.middle-initial{
+  width: 55px !important;
+}
+
+.last-name{
+  width: -50px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.has-feedback-reg{
+  width: 400px;
+  margin-left: -40px !important;
+}
+
+.btn-reg-alt{
+  width: 400px !important;
+  margin-left: -40px !important;
+}
+
+.btn-reg{
+  margin-left: 40px;
 }
 
 @media (min-width:350px) and (max-width:767px) { 
 
-	.form-control-inline-first-name {
-    	display: inline-block;
-    	width: 100%;
+	.first-name {
+    	width: 100% !important;
 	}
 
-	.form-control-inline-last-name{
-		margin-left: 0px;
-		display: inline-block;
-		width: 100%;
+	.last-name{
+		width: 100% !important;
 	}
 	
-	.form-control-inline-middle-initial{
-		width: 100%;
+	.middle-initial{
+		width: 100% !important;
+	}
+	.has-feedback-reg{
+	  width: 100%;
+	  margin-left: 0px !important;
+	}
+	
+	.btn-reg-alt{
+	  width: 100% !important;
+	  margin-left: 0px !important;
+	}
+	
+	.btn-reg{
+	  margin-left: 0px !important;
 	}
 }
 
 .control-date-field{
 	width: 30%;
-}
-
-
-.login-button{
-	margin-top: 5px;
 }
 
 .login-register{
@@ -333,4 +353,3 @@ input::-webkit-input-placeholder {
 .padEdit{
   margin-left: 20px;
 }
-
