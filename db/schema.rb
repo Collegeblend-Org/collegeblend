@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170311040826) do
+ActiveRecord::Schema.define(version: 20170323165851) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -39,7 +39,31 @@ ActiveRecord::Schema.define(version: 20170311040826) do
     t.integer  "value"
     t.string   "category"
     t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
+
+  add_index "points", ["user_id"], name: "index_points_on_user_id"
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scorecards", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "daily"
+    t.integer  "weekly"
+    t.integer  "monthly"
+    t.integer  "yearly"
+    t.integer  "lifetime"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scorecards", ["user_id"], name: "index_scorecards_on_user_id"
 
   create_table "survey_answers", force: :cascade do |t|
     t.integer  "attempt_id"
@@ -67,15 +91,6 @@ ActiveRecord::Schema.define(version: 20170311040826) do
     t.datetime "updated_at"
   end
 
-  add_index "points", ["user_id"], name: "index_points_on_user_id"
-
-  create_table "scorecards", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "daily"
-    t.integer  "weekly"
-    t.integer  "monthly"
-    t.integer  "yearly"
-    t.integer  "lifetime"
   create_table "survey_questions", force: :cascade do |t|
     t.integer  "survey_id"
     t.string   "text"
@@ -83,7 +98,6 @@ ActiveRecord::Schema.define(version: 20170311040826) do
     t.datetime "updated_at"
   end
 
-  add_index "scorecards", ["user_id"], name: "index_scorecards_on_user_id"
   create_table "survey_surveys", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -117,5 +131,4 @@ ActiveRecord::Schema.define(version: 20170311040826) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-end
 end

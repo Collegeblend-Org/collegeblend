@@ -69,7 +69,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/assets/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/assets/admin_photo.jpeg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p class="block-for-print"><%= current_user.first_name + " " + current_user.last_name %></p>
@@ -94,18 +94,27 @@ desired effect
       <ul class="sidebar-menu">
         <li class="header">Navigation</li>
         <!-- Optionally, you can add icons to the links -->
+        
         <li id="home"><%= link_to page_path('home') do %>
           <i class="fa fa-home"></i><span>Home</span>
         </li>
         <% end %>
+        
         <li id="users"><%= link_to users_path do %>
           <i class="fa fa-users"></i><span>Users</span>
         </li>
         <% end %>
+        
         <li id="articles"><%= link_to articles_path do %>
           <i class="fa fa-pencil-square"></i><span>Articles</span>
         </li>
         <% end %>
+        
+        <li id="quizzes"><%= link_to surveys_path do %>
+          <i class="fa fa-university"></i><span>Quizzes</span>
+        </li>
+        <% end %>
+        
         <!-- <li class="treeview">
           <a href="#"><i class="fa fa-pencil-square"></i> <span>Articles</span>
             <span class="pull-right-container">
@@ -166,7 +175,15 @@ desired effect
         <% if current_page?(user_path(@user)) %>
           <%= render template: 'users/show' %>
         <% end %>
-      
+        
+      <% elsif @survey %>
+        <% if current_page?(new_survey) %>
+          <%= render template: 'surveys/new' %>
+        <% end %>
+        
+      <% elsif not @survey and current_page?(surveys_path) %>
+          <%= render template: 'surveys/index' %>
+
       <% else %>
         <%= render template: '/pages/home' %>
         
