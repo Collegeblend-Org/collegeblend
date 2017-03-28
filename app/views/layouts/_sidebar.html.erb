@@ -100,9 +100,11 @@ desired effect
         </li>
         <% end %>
         
-        <li id="users"><%= link_to users_path do %>
-          <i class="fa fa-users"></i><span>Users</span>
-        </li>
+        <% if current_user.admin? %>
+          <li id="users"><%= link_to users_path do %>
+            <i class="fa fa-users"></i><span>Users</span>
+          </li>
+          <% end %>
         <% end %>
         
         <li id="articles"><%= link_to articles_path do %>
@@ -166,23 +168,20 @@ desired effect
       <% elsif current_page?('/articles/new') %>
         <%= render template: '/articles/new' %>
         
-      <% elsif @article %>  
-        <% if current_page?(@article) %>
+      <% elsif @article and current_page?(@article) %>  
           <%= render template: '/articles/show' %>
-        <% end %>
-      
-      <% elsif @user %>
-        <% if current_page?(user_path(@user)) %>
+
+      <% elsif @user and current_page?(user_path(@user))%>
           <%= render template: 'users/show' %>
-        <% end %>
-        
-      <% elsif @survey %>
-        <% if current_page?(new_survey) %>
+
+      <% elsif @survey and current_page?(new_survey)%>
           <%= render template: 'surveys/new' %>
-        <% end %>
-        
+
       <% elsif not @survey and current_page?(surveys_path) %>
           <%= render template: 'surveys/index' %>
+        
+      <% elsif @survey and current_page?(edit_survey_path) %>
+        <%= render template: 'surveys/edit' %>
 
       <% else %>
         <%= render template: '/pages/home' %>

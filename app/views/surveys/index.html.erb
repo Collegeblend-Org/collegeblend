@@ -1,19 +1,74 @@
-<div class="questionnaires_<%= action_name %>">
-  <h1>
-      Surveys Index
-  </h1>
-  <hr>
-  <%= link_to "New Survey", new_survey %>
+<div class="questionnaries_<%= action_name %>">
+<% if current_user.admin? %>
+  <div><%= link_to 'New Quiz', new_survey, class:"btn btn-primary" %></div>
+<% end %>
+</br>
 
-  <ul>
-    <% @surveys.each do |survey| %>
-      <li>
-        <%= link_to survey.name, edit_survey(survey) %>
-      </li>
-    <% end -%>
-  </ul>
+<% @surveys.each do |survey| %>
+<div class="box">
+  
+  <div class="box-body no-padding">
+    <div class="mailbox-read-info">
+      <h3><%= survey.name %></h3>
+      <h5>Completed: <%= survey.finished %>
+      <span class="mailbox-read-time pull-right"><%= survey.created_at %></span></h5>
+    </div>
+    <div class="mailbox-controls with-border text-center">
+      <div class="btn-group">
+        <% if current_user.admin? %>
+          <%= link_to edit_survey(survey) do %>
+          <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Edit">
+            <i class="fa fa-edit"></i></button>
+          <% end %>
+        <% end %>
+        <%= link_to '#', :onclick => 'window.print();return false;' do %>
+        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Print">
+          <i class="fa fa-print"></i></button>
+        <% end %>
+        <% if current_user.admin? %>
+          <%= link_to surveys_path, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Delete">
+            <i class="fa fa-trash-o"></i></button>
+          <% end %>
+        <% end %>  
+      </div>
+    </div>
+    <div class="mailbox-read-message">
+      <p>
+        <%=raw survey.description.truncate(1500) %>
+      </p>
+    </div>
+    <div align="center">
+      <%= link_to surveys_path do %>
+        <button type="button" class="btn btn-primary style-btn">Attempt</button>
+      <% end %>
+    </div>
+    </br>
+  </div>
+</div>
+</br>
+<% end %>
 
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <script>
         $(document).ready(function () {
