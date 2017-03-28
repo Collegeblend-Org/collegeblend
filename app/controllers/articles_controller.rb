@@ -1,10 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, except: [ :index, :show ]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.all.order(created_at: :desc)
   end
 
   # GET /articles/1
