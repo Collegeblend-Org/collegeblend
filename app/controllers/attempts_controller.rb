@@ -1,7 +1,7 @@
 class AttemptsController < ApplicationController
 
   helper 'surveys'
-
+  before_filter :authenticate_user!, except: [ :index, :show ]
   before_filter :load_active_survey
   before_filter :normalize_attempts_data, :only => :create
 
