@@ -8,9 +8,11 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey::Survey.new
+    authorize User
   end
 
   def create
+    authorize User
     @survey = Survey::Survey.new(survey_params)
     if @survey.valid? && @survey.save
       default_redirect
@@ -20,6 +22,7 @@ class SurveysController < ApplicationController
   end
 
   def edit
+    authorize User
   end
 
   def show

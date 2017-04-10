@@ -11,6 +11,9 @@ class UserPolicy
     # is the current user an admin? 
     # if so it can go to index and see index 
     # else it is access denied
+    def new?
+        @current_user.admin? || @current_user.counselor?
+    end
     def index?  
         @current_user.admin?    
     end 

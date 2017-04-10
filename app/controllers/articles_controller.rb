@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [ :index, :show ]
-
+  after_action :verify_authorized
   # GET /articles
   # GET /articles.json
   def index
@@ -16,10 +16,12 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = current_user.articles.build
+    authorize User
   end
 
   # GET /articles/1/edit
   def edit
+    authorize User
   end
 
   # POST /articles
@@ -55,6 +57,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    authorize User
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
