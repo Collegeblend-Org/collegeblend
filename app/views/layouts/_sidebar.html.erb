@@ -69,7 +69,11 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/assets/admin_photo.jpeg" class="img-circle" alt="User Image">
+          <% if current_user.admin? %>
+            <img src="/assets/admin_photo.jpeg" class="img-circle" alt="User Image">
+          <% elsif current_user.student? %>
+            <img src="/assets/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <% end %>
         </div>
         <div class="pull-left info">
           <p class="block-for-print"><%= current_user.first_name + " " + current_user.last_name %></p>
@@ -100,9 +104,11 @@ desired effect
         </li>
         <% end %>
         
-        <li id="users"><%= link_to users_path do %>
-          <i class="fa fa-users"></i><span>Users</span>
-        </li>
+        <% if current_user.admin? %>
+          <li id="users"><%= link_to users_path do %>
+            <i class="fa fa-users"></i><span>Users</span>
+          </li>
+          <% end %>
         <% end %>
         
         <li id="articles"><%= link_to articles_path do %>
@@ -166,23 +172,22 @@ desired effect
       <% elsif current_page?('/articles/new') %>
         <%= render template: '/articles/new' %>
         
-      <% elsif @article %>  
-        <% if current_page?(@article) %>
+      <% elsif @article and current_page?(@article) %>  
           <%= render template: '/articles/show' %>
-        <% end %>
-      
-      <% elsif @user %>
-        <% if current_page?(user_path(@user)) %>
+      <% elsif @article and current_page?(edit_article_path) %>
+        <%= render template: 'articles/edit' %>
+
+      <% elsif @user and current_page?(user_path(@user))%>
           <%= render template: 'users/show' %>
-        <% end %>
-        
-      <% elsif @survey %>
-        <% if current_page?(new_survey) %>
+
+      <% elsif @survey and current_page?(new_survey)%>
           <%= render template: 'surveys/new' %>
-        <% end %>
-        
+
       <% elsif not @survey and current_page?(surveys_path) %>
           <%= render template: 'surveys/index' %>
+        
+      <% elsif @survey and current_page?(edit_survey_path) %>
+        <%= render template: 'surveys/edit' %>
 
       <% else %>
         <%= render template: '/pages/home' %>
