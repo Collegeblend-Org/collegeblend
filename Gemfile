@@ -35,6 +35,7 @@ gem 'honor', '~> 2.0', '>= 2.0.1'
 gem "survey", "~> 0.1"
 
 gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
 
 
 # Use ActiveModel has_secure_password
