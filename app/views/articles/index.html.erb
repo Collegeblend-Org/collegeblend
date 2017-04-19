@@ -1,4 +1,4 @@
-<% if current_user.admin? %>
+<% if current_user.admin? || current_user.counselor? %>
   <div><%= link_to 'New Article', new_article_path, class:"btn btn-primary" %></div>
 <% end %>
 </br>

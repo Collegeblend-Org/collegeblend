@@ -1,5 +1,5 @@
 <div class="questionnaries_<%= action_name %>">
-<% if current_user.admin? %>
+<% if current_user.admin? || current_user.counselor? %>
   <div><%= link_to 'New Quiz', new_survey, class:"btn btn-primary" %></div>
 <% end %>
 </br>
