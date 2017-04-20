@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :articles
   resources :surveys
+  resources :attempts
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   root "pages#show", page: "starter"

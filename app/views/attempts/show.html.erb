@@ -1,0 +1,6 @@
+<% if @survey.attempts.last[:score] == 1 %>
+    <% correct_answer? %>
+    <%= "You answered the question correctly!" %>
+<% else %>
+    <%= "You got the wrong answer!!!" %>
+<% end %>
