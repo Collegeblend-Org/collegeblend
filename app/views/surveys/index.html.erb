@@ -39,7 +39,7 @@
       </p>
     </div>
     <div align="center">
-      <%= link_to surveys_path do %>
+      <%= link_to new_attempt(:survey_id => survey.id) do %>
         <button type="button" class="btn btn-primary style-btn">Attempt</button>
       <% end %>
     </div>
