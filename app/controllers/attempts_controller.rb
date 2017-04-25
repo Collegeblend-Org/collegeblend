@@ -20,7 +20,7 @@ class AttemptsController < ApplicationController
     @attempt.participant = current_user
 
     if @attempt.valid? && @attempt.save
-      redirect_to attempt_path(@survey_id)
+      redirect_to attempt_path(@survey.id)
     else
       render :action => :new
     end
