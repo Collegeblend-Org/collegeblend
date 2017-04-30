@@ -1,6 +1,7 @@
 class SurveysController < ApplicationController
   before_filter :authenticate_user!, except: [ :index, :show ]
   before_filter :load_survey, :only => [:show, :edit, :update]
+  after_action :verify_authorized, except: [:index, :show]
 
   def index
     @surveys = Survey::Survey.all
@@ -14,6 +15,7 @@ class SurveysController < ApplicationController
   def create
     authorize User
     @survey = Survey::Survey.new(survey_params)
+    authorize User
     if @survey.valid? && @survey.save
       default_redirect
     else
@@ -30,6 +32,7 @@ class SurveysController < ApplicationController
 
   def update
     if @survey.update_attributes(survey_params)
+      authorize User
       default_redirect
     else
       render :action => :edit

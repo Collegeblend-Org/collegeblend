@@ -1,5 +1,5 @@
 <div class="questionnaries_<%= action_name %>">
-<% if current_user.admin? %>
+<% if current_user.admin? || current_user.counselor? %>
   <div><%= link_to 'New Quiz', new_survey, class:"btn btn-primary" %></div>
 <% end %>
 </br>
@@ -39,7 +39,7 @@
       </p>
     </div>
     <div align="center">
-      <%= link_to surveys_path do %>
+      <%= link_to new_attempt(:survey_id => survey.id) do %>
         <button type="button" class="btn btn-primary style-btn">Attempt</button>
       <% end %>
     </div>

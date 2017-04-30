@@ -4,6 +4,7 @@ class AttemptsController < ApplicationController
   before_filter :authenticate_user!, except: [ :index, :show ]
   before_filter :load_active_survey
   before_filter :normalize_attempts_data, :only => :create
+  helper_method :correct_answer?
 
   def new
     @participant = current_user # you have to decide what to do here
@@ -19,16 +20,23 @@ class AttemptsController < ApplicationController
     @attempt.participant = current_user
 
     if @attempt.valid? && @attempt.save
-      redirect_to view_context.new_attempt, alert: I18n.t("attempts_controller.#{action_name}")
+      redirect_to attempt_path(@survey_id)
     else
       render :action => :new
+    end
+  end
+  
+  def correct_answer?
+    if @survey.attempts.last[:score] == 1
+      current_user.add_points(10)
     end
   end
 
   private
 
   def load_active_survey
-    @survey =  Survey::Survey.active.first
+    @survey_id =  params[:survey_id].to_i - 1
+    @survey = Survey::Survey.active[@survey_id]
   end
 
   def normalize_attempts_data

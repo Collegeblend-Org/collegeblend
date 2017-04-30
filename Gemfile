@@ -1,4 +1,10 @@
 source 'https://rubygems.org'
+<<<<<<< HEAD
+=======
+
+ruby '2.3.0'
+
+>>>>>>> origin/master
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 
@@ -31,6 +37,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'honor', '~> 2.0', '>= 2.0.1'
 gem "survey", "~> 0.1"
 
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -46,6 +55,10 @@ group :development, :test do
   gem 'byebug'
 end
 
+group :development do 
+  gem 'sqlite3'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -54,7 +67,15 @@ group :development do
   gem 'spring'
 end
 
+<<<<<<< HEAD
 group :production do 
   gem 'pg'
   gem 'rails_12factor'
 end
+=======
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end 
+
+>>>>>>> origin/master

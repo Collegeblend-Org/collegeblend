@@ -1,7 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [ :index, :show ]
+<<<<<<< HEAD
   after_action :verify_authorized
+=======
+  after_action :verify_authorized, except: [:index, :show]
+>>>>>>> origin/master
   # GET /articles
   # GET /articles.json
   def index
@@ -27,6 +31,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
+    authorize User
     @article = current_user.articles.build(article_params)
 
     respond_to do |format|
@@ -43,6 +48,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    authorize User
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
