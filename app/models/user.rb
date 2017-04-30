@@ -37,4 +37,5 @@ class User < ActiveRecord::Base
     validates :first_name, :middle_initial, :last_name, :birthdate, presence: true
     
     has_many :articles
+    has_many :surveys
 end

@@ -8,7 +8,7 @@
   <div class="box-body no-padding">
     <div class="mailbox-read-info">
       <h3><%= article.title %></h3>
-      <h5>From: <%= article.user_id %>
+      <h5>From: <%= article.user.first_name %></h5>
       <span class="mailbox-read-time pull-right"><%= article.created_at %></span></h5>
     </div>
     <div class="mailbox-controls with-border text-center">
