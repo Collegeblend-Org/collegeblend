@@ -1,11 +1,8 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!, except: [ :index, :show ]
-<<<<<<< HEAD
-  after_action :verify_authorized
-=======
   after_action :verify_authorized, except: [:index, :show]
->>>>>>> origin/master
+  
   # GET /articles
   # GET /articles.json
   def index
