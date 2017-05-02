@@ -1,4 +1,4 @@
-<body>
+<div class="box">
     <div align = "center">
         <% if @new_user == true %>
             <div class="alert">
@@ -7,7 +7,7 @@
             </div>
             <div class="alert">
                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-                You have been awarded 5 points!
+                You have been awarded 50 points!
             </div>
             <%= javascript_include_tag 'points_alert' %>
         <% end %>
@@ -41,7 +41,7 @@
             </div>
         </p>
     </div>
-</body>
+</div>
 
 
 <!-- jQuery 2.2.3 -->

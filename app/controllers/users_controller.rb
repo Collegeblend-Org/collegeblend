@@ -39,7 +39,7 @@ class UsersController < ApplicationController
         
         def check_if_new_user
             if @user.points_total == 0
-                @user.add_points(5)
+                @user.add_points(50)
                 @new_user = true
             else 
                 @new_user = false
