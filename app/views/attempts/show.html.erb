@@ -26,6 +26,9 @@
                 <h4><center>I'm sorry, you did not answer all questions correctly, please try again!</center></h4>
             <% end %>
             <br>
+            <%= link_to user_path(current_user) do %>
+                <center><button type="button" class="btn btn-primary">Profile</button></center>
+            <% end %>
         </div>
     </div>
 </div>

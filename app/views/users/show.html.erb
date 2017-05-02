@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box box-primary">
     <div align = "center">
         <% if @new_user == true %>
             <div class="alert">
@@ -19,7 +19,7 @@
         <p><b>Last Name:</b> <%= @user.last_name if @user.last_name %></p>
         <p><b>Birth Date:</b> <%= @user.birthdate if @user.birthdate %></p>
         <br/>
-        <p><b>Quizzes Completed:</b> 0</p>
+        <p><b>Quizzes Completed:</b> 0 </p>
         <p><b>Points:</b> <%= @user.points_total %></p>
         <p><b>Scholarship:</b> $<%= @user.points_to_money %></p>
         <p> <%= link_to page_path('build_profile') do %>
