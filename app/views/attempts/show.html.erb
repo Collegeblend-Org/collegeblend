@@ -1,7 +1,8 @@
 <% current_user_attempts = [] %>
-<% current_user_attempts = @survey.attempts.select {|attempt| attempt.participant_id == 1} %>
+<% current_user_attempts = @survey.attempts.select {|attempt| attempt.participant_id == current_user.id} %>
 
 <% current_user_attempts.last.answers.each do |answer| %>
+
     <% if answer.correct == false %>
         <%= "Sorry, you didn't answer the correct question(s)" %>
         <% break %>
