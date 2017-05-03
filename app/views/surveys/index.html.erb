@@ -10,7 +10,11 @@
   <div class="box-body no-padding">
     <div class="mailbox-read-info">
       <h3><%= survey.name %></h3>
-      <h5>Completed: <%= survey.finished %>
+      <% if survey.finished %>
+        <h5> Completed
+      <% else %>
+        <h5> Not Completed
+      <% end %>
       <span class="mailbox-read-time pull-right"><%= survey.created_at %></span></h5>
     </div>
     <div class="mailbox-controls with-border text-center">
