@@ -24,7 +24,14 @@
       </tr>
       <% @users.each do |user| %>
       <tr>
-        <%= render user %>
+        <% if current_user.counselor? %>
+          <% if user.admin? || user.counselor? %>
+          <% else %>
+            <%= render user %>
+          <% end %>
+        <% else %>
+          <%= render user %>
+        <% end %>
       </tr>
       <% end %>
     </table>

@@ -15,7 +15,7 @@ class UserPolicy
         @current_user.admin? || @current_user.counselor?
     end
     def index?  
-        @current_user.admin?    
+        @current_user.admin? ||@current_user.counselor?    
     end 
     def new? 
         @current_user.admin? || @current_user.counselor? 
