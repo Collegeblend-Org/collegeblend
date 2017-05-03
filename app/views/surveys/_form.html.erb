@@ -1,5 +1,5 @@
 <%= form_for(@survey, :url => survey_scope(@survey)) do |f| %>
-
+  
   <% if f.object.errors.messages.any? %>
     <ul>
       <% f.object.errors.messages.each_pair do |field, msg| %>

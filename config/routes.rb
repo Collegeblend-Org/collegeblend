@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :attempts
   devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
-  root "users#show", user: "new"
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
    
   #create users route 
   resources :users 
