@@ -4,19 +4,7 @@
       <h2>New Quiz</h2>
       
 <%= form_for(@survey, :url => survey_scope(@survey)) do |f| %>
-<<<<<<< HEAD
-=======
-  
-  <% if f.object.errors.messages.any? %>
-    <ul>
-      <% f.object.errors.messages.each_pair do |field, msg| %>
-        <li>
-          <%= "#{field} - #{msg}" %>
-        </li>
-      <% end -%>
-    </ul>
-  <% end -%>
->>>>>>> origin/master
+
 
   <div class="field">
     <%= f.label :name %> <br />
