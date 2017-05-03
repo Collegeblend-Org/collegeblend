@@ -1,14 +1,9 @@
+<div class="box">
+  <div class="box-body no-padding">
+    <div class="mailbox-read-info">
+      <h2>New Quiz</h2>
+      
 <%= form_for(@survey, :url => survey_scope(@survey)) do |f| %>
-
-  <% if f.object.errors.messages.any? %>
-    <ul>
-      <% f.object.errors.messages.each_pair do |field, msg| %>
-        <li>
-          <%= "#{field} - #{msg}" %>
-        </li>
-      <% end -%>
-    </ul>
-  <% end -%>
 
   <div class="field">
     <%= f.label :name %> <br />
@@ -39,7 +34,7 @@
   <br/ >
 
   <div class="field">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary" %>
   </div>
 <% end -%>
 
@@ -59,3 +54,6 @@
     html.appendTo($(link).closest("div.field").find("ul").first()).slideDown("slow");
   }
 </script>
+</div>
+</div>
+</div>
