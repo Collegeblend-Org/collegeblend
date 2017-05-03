@@ -13,7 +13,7 @@
     </div>
     <div class="mailbox-controls with-border text-center">
       <div class="btn-group">
-        <% if current_user.admin? %>
+        <% if current_user.admin? || current_user.counselor? %>
           <%= link_to edit_article_path(article) do %>
           <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Edit">
             <i class="fa fa-edit"></i></button>
