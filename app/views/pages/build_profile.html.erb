@@ -1,0 +1,98 @@
+<body>
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Profile Questionnaire</h3>
+        </div>
+        <div class="box-body">
+            <form role="form">
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" class="form-control" placeholder="xxx-xxx-xxxx">
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label>Ethnicity</label>
+                            <select class="form-control">
+                                <option>White/Caucasian</option>
+                                <option>Hispanic/Latino</option>
+                                <option>African American</option>
+                                <option>Asian</option>
+                                <option>American Indian or Alaska Native</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Other</label>
+                            <input type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Favorite Subject</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                
+                <div class="form-group">
+                    <label>If you could be anything, what would you be in 10 years?</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Career Plan 1</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <label>Career Plan 2</label>
+                            <input type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                        <div class="col-xs-6">
+                            <label>Career Plan 3</label>
+                            <input type="text" class="form-control" placeholder="Enter ...">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Are you involved in school? If so, what are you involved in?</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+
+                <div class="form-group">
+                    <label>Where are you from?</label>
+                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Are you working a job this year? If so, in a few sentences explain the job and how you feel about it.</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Have you ever played brain game apps on your phone? Which ones?</label>
+                    <input type="text" class="form-control" placeholder="Enter ...">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div align="center">
+            <%= link_to current_user do %>
+                <button type="button" class="btn btn-primary">Submit</button>
+            <% end %>
+        </div>
+</body>
+
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>

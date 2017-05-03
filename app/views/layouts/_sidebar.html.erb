@@ -104,7 +104,7 @@ desired effect
         </li>
         <% end %>
         
-        <% if current_user.admin? %>
+        <% if current_user.admin? || current_user.counselor? %>
           <li id="users"><%= link_to users_path do %>
             <i class="fa fa-users"></i><span>Users</span>
           </li>
